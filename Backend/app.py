@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from authroute import auth_bp,setup_jwt
 from dotenv import load_dotenv
+from trending_jobs import trending_jobs_bp
 
 load_dotenv()
 
@@ -20,6 +21,7 @@ setup_jwt(app)
 
 # Register Blueprints
 app.register_blueprint(auth_bp, url_prefix="/auth")
+app.register_blueprint(trending_jobs_bp,url_prefix='/job')
 
 if __name__ == "__main__":
     app.run(debug=True)
