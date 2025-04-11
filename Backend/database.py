@@ -1,18 +1,16 @@
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
-
-MONGO_URI = ""
-
+load_dotenv()
+MONGO_URI = os.getenv("MONGO_URI")
 
 client = MongoClient(MONGO_URI)
-db = client["Fitnova"]  
-users_collection = db["User"] 
+db = client["TicTechToe"]
+
+users_collection = db["User"]
+admin_collection = db["Admin"]
 trainer_collection = db["Trainer"]
 nutritionist_collection = db["Nutritionist"]
-admin_collection = db["Admin"]
-member_Dashboard = db["MemberDashboard"]
-meeting_collection = db["meeting"]
-meeting_nutritionist_collection = db["meeting_nutritionist"]
-user_Report = db["userReport"]
 
 print("Connected to MongoDB Atlas successfully!")
