@@ -11,6 +11,8 @@ export default function Home() {
       <button onClick={() => navigate('/networkanalysis')}>Network Analysis</button>
       <button onClick={() => navigate('/resumeinterview')}>Resume & Interview</button>
       <button onClick={() => navigate('/personalised')}>Personalised Career</button>
+      <button onClick={() => navigate('/create')}>Create Account</button>
+      <button onClick={() => navigate('/trendingjob')}>Trending Jobs</button>
     </div>
   );
 }
