@@ -9,8 +9,6 @@ client = MongoClient(MONGO_URI)
 db = client["TicTechToe"]
 
 users_collection = db["User"]
-admin_collection = db["Admin"]
-trainer_collection = db["Trainer"]
-nutritionist_collection = db["Nutritionist"]
+skills_collection = db["ExtractedSkills"]
 
 print("Connected to MongoDB Atlas successfully!")

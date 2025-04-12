@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import SkillExtractor from "./SkillExtractor";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ export default function Home() {
       <button onClick={() => navigate('/create')}>Create Account</button>
       <button onClick={() => navigate('/trendingjob')}>Trending Jobs</button>
       <button onClick={() => navigate("/coursematerial")}>📚 Course Materials</button>
+      <button onClick={() => navigate('/skill')}>Skill</button>
     </div>
   );
 }

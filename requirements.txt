@@ -1,0 +1,9 @@
+Flask
+flask-cors
+flask-jwt-extended
+python-dotenv
+PyPDF2
+docx2txt
+bcrypt
+bson
+pymongo
