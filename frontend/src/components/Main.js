@@ -16,7 +16,7 @@ export default function Main() {
         <p>Your gateway to trending tech jobs, curated and real-time.</p>
 
         <div className="cta-buttons">
-          <Link to="/trending-jobs" className="btn explore">Explore Jobs</Link>
+          <Link to="/trendingjob" className="btn explore">Explore Jobs</Link>
           <Link to="/login" className="btn login">Login</Link>
           <Link to="/dashboard" className="btn dashboard">Go to Dashboard</Link>
           <Link to="/recommended" className="btn dashboard">Go to Recommended Job</Link>
