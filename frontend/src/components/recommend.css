@@ -1,0 +1,56 @@
+.recommend-job-container {
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* consistent with body background */
+    color: #e0e0e0;
+  }
+  
+  .job-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .job-card {
+    background-color: #1f1f1f; /* dark card background */
+    color: #f0f0f0; /* light text for readability */
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .job-card h3 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+  }
+  
+  .job-card p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .apply-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 14px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .apply-btn:hover {
+    background-color: #2980b9;
+  }
+  

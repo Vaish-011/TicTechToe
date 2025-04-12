@@ -1,13 +1,9 @@
-import os
-from datetime import datetime
 from flask import Blueprint, request, jsonify
 import bcrypt
-from flask_jwt_extended import (
-    create_access_token, jwt_required, get_jwt_identity, JWTManager
-)
+from flask_jwt_extended import create_access_token, JWTManager
 from bson import ObjectId
-from dotenv import load_dotenv
 from database import users_collection
+import os
 
 auth_bp = Blueprint("auth", __name__)
 
@@ -15,23 +11,15 @@ def setup_jwt(app):
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "default-jwt-secret")
     JWTManager(app)
 
-# Register
 @auth_bp.route("/register", methods=["POST"])
 def register():
-    print("Received request.json:", request.json)
     data = request.json
-
-    if not data:
-        return jsonify({"message": "No JSON data received!"}), 400
-
     name = data.get("name")
     email = data.get("email")
     password = data.get("password")
     role = data.get("role")
     current_location = data.get("current_location")
     preferred_location = data.get("preferred_location", "")
-
-    print(f"Registering: name={name}, email={email}, role={role}, current_location={current_location}, preferred_location={preferred_location}")
 
     if not name or not email or not password or not role or not current_location:
         return jsonify({"message": "All required fields must be filled!"}), 400
@@ -41,22 +29,17 @@ def register():
 
     hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
-    try:
-        users_collection.insert_one({
-            "name": name,
-            "email": email,
-            "password": hashed_password,
-            "role": role,
-            "current_location": current_location,
-            "preferred_location": preferred_location
-        })
-        print("User inserted successfully!")
-        return jsonify({"message": "User registered successfully!"}), 201
-    except Exception as e:
-        print(f"Database error: {e}")
-        return jsonify({"message": f"Database error: {e}"}), 500
+    users_collection.insert_one({
+        "name": name,
+        "email": email,
+        "password": hashed_password,
+        "role": role,
+        "current_location": current_location,
+        "preferred_location": preferred_location
+    })
 
-# Login
+    return jsonify({"message": "User registered successfully!"}), 201
+
 @auth_bp.route("/login", methods=["POST"])
 def login():
     data = request.json

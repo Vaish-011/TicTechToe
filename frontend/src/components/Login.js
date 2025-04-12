@@ -29,7 +29,7 @@ export default function Login() {
       if (res.ok) {
         setMessage('✅ Login successful!');
         localStorage.setItem('token', data.access_token);
-        navigate('/dashboard');
+        navigate('/main');
       } else {
         setMessage(`❌ ${data.message}`);
       }

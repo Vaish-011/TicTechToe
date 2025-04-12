@@ -5,6 +5,10 @@ from flask_jwt_extended import JWTManager
 from authroute import auth_bp,setup_jwt
 from dotenv import load_dotenv
 from trending_jobs import trending_jobs_bp
+from dashboard import dashboard_bp
+from recommender import ml_recommender_bp
+from skill import skill_bp
+from course import course_bp
 
 load_dotenv()
 
@@ -22,6 +26,9 @@ setup_jwt(app)
 # Register Blueprints
 app.register_blueprint(auth_bp, url_prefix="/auth")
 app.register_blueprint(trending_jobs_bp,url_prefix='/job')
-
+app.register_blueprint(dashboard_bp)
+app.register_blueprint(ml_recommender_bp)
+app.register_blueprint(skill_bp,url_prefix='/skills')
+app.register_blueprint(course_bp)
 if __name__ == "__main__":
     app.run(debug=True)

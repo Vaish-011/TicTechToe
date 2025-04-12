@@ -1,0 +1,75 @@
+.main-page {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #00bfff;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn.explore {
+    background-color: #00bfff;
+    color: white;
+  }
+  
+  .btn.explore:hover {
+    background-color: #0099cc;
+  }
+  
+  .btn.login {
+    background-color: transparent;
+    border: 2px solid #00bfff;
+    color: #00bfff;
+  }
+  
+  .btn.login:hover {
+    background-color: #00bfff;
+    color: white;
+  }
+
+  .btn.dashboard {
+    background-color: #6c63ff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn.dashboard:hover {
+    background-color: #574b90;
+  }
+  
+  

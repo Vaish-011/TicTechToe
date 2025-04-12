@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-
+import Main from './components/Main';
 import JobMarket from './components/jobmarket';
 import Skill from './components/skill';
 import NetworkAnalysis from './components/networkanalysis';
@@ -10,6 +10,9 @@ import Home from './components/home';
 import CreateAccount from './components/CreateAccount';
 import Login from './components/Login';
 import TrendingJobs from './components/Trendingjobs';
+import Dashboard from './components/dashboard';
+import RecommendJob from './components/recommendjob';
+import Coursematerial from './components/Coursematerial';
 
 function App() {
   return (
@@ -25,6 +28,11 @@ function App() {
           <Route path='/create' element={<CreateAccount/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/trendingjob' element={<TrendingJobs/>}/>
+          <Route path='/main' element={<Main/>}/>
+          <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/recommended' element={<RecommendJob/>}/>
+          <Route path='/coursematerial' element={<Coursematerial />} />
+          
         </Routes>
       </BrowserRouter>
     </div>
