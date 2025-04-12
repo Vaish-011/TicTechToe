@@ -9,6 +9,7 @@ from dashboard import dashboard_bp
 from recommender import ml_recommender_bp
 from course import course_bp
 from skill import skill_bp
+from job_routes import job_bp
 
 load_dotenv()
 
@@ -30,6 +31,7 @@ app.register_blueprint(dashboard_bp)
 app.register_blueprint(ml_recommender_bp)
 app.register_blueprint(course_bp)
 app.register_blueprint(skill_bp, url_prefix="/skills")
+app.register_blueprint(job_bp, url_prefix="/jobs")
 
 if __name__ == "__main__":
     app.run(debug=True)

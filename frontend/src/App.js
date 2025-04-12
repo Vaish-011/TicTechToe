@@ -13,6 +13,7 @@ import TrendingJobs from './components/Trendingjobs';
 import Dashboard from './components/dashboard';
 import RecommendJob from './components/recommendjob';
 import Coursematerial from './components/Coursematerial';
+import JobRecommend  from './components/jobrecommend';
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
           <Route path='/dashboard' element={<Dashboard/>}/>
           <Route path='/recommended' element={<RecommendJob/>}/>
           <Route path='/coursematerial' element={<Coursematerial />} />
-          
+          <Route path='/jobrecommend' element={<JobRecommend />} />
+        
         </Routes>
       </BrowserRouter>
     </div>

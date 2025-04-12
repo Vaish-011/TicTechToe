@@ -10,5 +10,6 @@ db = client["TicTechToe"]
 
 users_collection = db["User"]
 skills_collection = db["ExtractedSkills"]
+job_collection = db["Jobs"]
 
 print("Connected to MongoDB Atlas successfully!")

@@ -20,6 +20,7 @@ export default function Main() {
           <Link to="/login" className="btn login">Login</Link>
           <Link to="/dashboard" className="btn dashboard">Go to Dashboard</Link>
           <Link to="/recommended" className="btn dashboard">Go to Recommended Job</Link>
+          <Link to="/networkanalysis" className="btn dashboard">Post Jobs</Link>
         </div>
       </motion.div>
     </div>
