@@ -57,13 +57,13 @@ def login():
     else:
         return jsonify({"message": "Invalid email or password!"}), 401
 
-# Protected route example
-@auth_bp.route("/protected", methods=["GET"])
-@jwt_required()
-def protected():
-    current_user_id = get_jwt_identity()
-    user = users_collection.find_one({"_id": ObjectId(current_user_id)})
-    if user:
-        return jsonify({"message": f"Hello, {user['name']}!"}), 200
-    else:
-        return jsonify({"message": "User not found"}), 404
+# # Protected route example
+# @auth_bp.route("/protected", methods=["GET"])
+# @jwt_required()
+# def protected():
+#     current_user_id = get_jwt_identity()
+#     user = users_collection.find_one({"_id": ObjectId(current_user_id)})
+#     if user:
+#         return jsonify({"message": f"Hello, {user['name']}!"}), 200
+#     else:
+#         return jsonify({"message": "User not found"}), 404

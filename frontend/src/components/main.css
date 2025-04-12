@@ -1,75 +1,99 @@
-.main-page {
-    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-    color: #ffffff;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', sans-serif;
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    color: #00bfff;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #cccccc;
-  }
-  
-  .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .btn {
-    padding: 0.7rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  .btn.explore {
-    background-color: #00bfff;
-    color: white;
-  }
-  
-  .btn.explore:hover {
-    background-color: #0099cc;
-  }
-  
-  .btn.login {
-    background-color: transparent;
-    border: 2px solid #00bfff;
-    color: #00bfff;
-  }
-  
-  .btn.login:hover {
-    background-color: #00bfff;
-    color: white;
-  }
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
 
-  .btn.dashboard {
-    background-color: #6c63ff;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    margin-left: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .btn.dashboard:hover {
-    background-color: #574b90;
-  }
-  
-  
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-card .icon {
+  color: #a5d8ff;
+}
+
+.dashboard-card h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard-card p {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  margin: 0;
+}
+.nav-btn {
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  color: #fff;
+  font-weight: 500;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  color: white;
+  min-height: 220px;
+  position: relative;
+}
+
+.dashboard-card .icon {
+  color: #a5d8ff;
+  margin-bottom: 1rem;
+  width: 32px;
+  height: 32px;
+}
+
+.dashboard-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.dashboard-card p {
+  color: #d1d5db;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3b82f6;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.card-btn:hover {
+  background-color: #2563eb;
+}
+
