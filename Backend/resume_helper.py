@@ -5,8 +5,7 @@ import google.generativeai as genai
 
 resume_helper = Blueprint('resume_helper', __name__)
 
-genai.configure(api_key="AIzaSyDOuX6Voz0CveT0dm4GiK85_XXrrZNVnbw")  # Use ENV var in real apps
-
+genai.configure(api_key="your api key here")  
 @resume_helper.route('/upload-resume', methods=['POST'])
 def upload_resume():
     if 'file' not in request.files:
