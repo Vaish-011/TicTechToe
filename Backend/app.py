@@ -10,7 +10,11 @@ from recommender import ml_recommender_bp
 from course import course_bp
 from skill import skill_bp
 from job_routes import job_bp
-
+from course import course_bp
+from assist import assist_bp
+from resume_helper import resume_helper
+from questionroute import questions_bp
+from extract_skills_keyword import skills_bp
 load_dotenv()
 
 app = Flask(__name__)
@@ -32,6 +36,10 @@ app.register_blueprint(ml_recommender_bp)
 app.register_blueprint(course_bp)
 app.register_blueprint(skill_bp, url_prefix="/skills")
 app.register_blueprint(job_bp, url_prefix="/jobs")
+app.register_blueprint(assist_bp)
+app.register_blueprint(resume_helper)
+app.register_blueprint(questions_bp)
+app.register_blueprint(skills_bp)
 
 if __name__ == "__main__":
     app.run(debug=True)

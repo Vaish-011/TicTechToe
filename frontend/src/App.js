@@ -14,6 +14,12 @@ import Dashboard from './components/dashboard';
 import RecommendJob from './components/recommendjob';
 import Coursematerial from './components/Coursematerial';
 import JobRecommend  from './components/jobrecommend';
+import InterviewAssist from './components/assist';
+import InterviewPrepPage from './quizpage';
+import ResumeUploader from './components/ResumeHelper';
+import React from "react";
+import SuggestedJobs from './components/suggestedjobs';
+
 
 
 function App() {
@@ -21,20 +27,24 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Home />} />
           <Route path='/jobmarket' element={<JobMarket />} />
           <Route path='/networkanalysis' element={<NetworkAnalysis />} />
           <Route path='/resumeinterview' element={<ResumeAndInterview />} />
           <Route path='/personalised' element={<PersonalisedCareer />} />
           <Route path='/skill' element={<Skill />} />
           <Route path='/create' element={<CreateAccount/>}/>
-          <Route path='/login' element={<Login/>}/>
+          <Route path='/' element={<Login/>}/>
           <Route path='/trendingjob' element={<TrendingJobs/>}/>
           <Route path='/main' element={<Main/>}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
           <Route path='/recommended' element={<RecommendJob/>}/>
           <Route path='/coursematerial' element={<Coursematerial />} />
           <Route path='/jobrecommend' element={<JobRecommend />} />
+          <Route path='/assist' element={<InterviewAssist/>} />
+          <Route path='/quiz' element={<InterviewPrepPage />} />
+          <Route path='/resumeuploader' element={<ResumeUploader />} />
+          <Route path='/suggestjob' element={<SuggestedJobs/>} />
         
         </Routes>
       </BrowserRouter>

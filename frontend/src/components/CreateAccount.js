@@ -54,7 +54,7 @@ export default function CreateAccount() {
   };
 
   const handleLoginRedirect = () => {
-    navigate('/login'); // Navigate to login page
+    navigate('/'); 
   };
 
   return (

@@ -117,7 +117,7 @@ const JobForm = () => {
 
       setEditing(false);
       setEditId(null);
-      navigate("/"); // Or navigate to the job list page
+      navigate("/main"); // Or navigate to the job list page
     } catch (error) {
       console.error("Error submitting job:", error);
       if (error.response && error.response.status === 401) {

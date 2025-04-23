@@ -1,99 +1,92 @@
-.dashboard-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  padding: 20px;
-  border-radius: 1rem;
-  text-decoration: none;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  transition: transform 0.3s ease, background 0.3s ease;
+.card-container {
+  max-height: 500px; /* You can adjust this based on your layout */
+  overflow-y: auto;
+  padding-right: 10px; /* for scrollbar spacing */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+  scroll-behavior: smooth;
 }
 
-.dashboard-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.2);
+/* Optional: nice scrollbar styling */
+.card-container::-webkit-scrollbar {
+  width: 8px;
 }
 
-.dashboard-card .icon {
-  color: #a5d8ff;
+.card-container::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 8px;
 }
 
-.dashboard-card h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0;
+.card-container::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
-.dashboard-card p {
-  font-size: 0.9rem;
-  color: #d1d5db;
-  margin: 0;
-}
-.nav-btn {
-  padding: 8px 16px;
-  border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  color: #fff;
-  font-weight: 500;
-}
-
-.nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
-.dashboard-card {
-  background: rgba(255, 255, 255, 0.08);
+.card {
+  background-color: #2d2d2d;
   padding: 24px;
-  border-radius: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-  transition: all 0.3s ease;
-  color: white;
-  min-height: 220px;
-  position: relative;
-}
-
-.dashboard-card .icon {
-  color: #a5d8ff;
-  margin-bottom: 1rem;
-  width: 32px;
-  height: 32px;
-}
-
-.dashboard-card h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.dashboard-card p {
-  color: #d1d5db;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.card-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: #3b82f6;
-  color: white;
-  padding: 6px 14px;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: background 0.3s ease;
+  min-height: 180px;
+  border-radius: 16px;
   text-decoration: none;
+  color: #ffffff;
+  border: 1px solid #333;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-.card-btn:hover {
-  background-color: #2563eb;
+.card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #ffffff;
 }
 
+.card p {
+  margin-top: 12px;
+  font-size: 1.05rem;
+  color: #bbbbbb;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background-color: #333333;
+}
+
+/* Color variations for cards */
+.card.explore {
+  background-color: #9c27b0;
+}
+
+.card.dashboard {
+  background-color: #9c27b0;
+}
+
+.card.explore:hover {
+  background-color: #9c27b0;
+}
+
+.card.dashboard:hover {
+  background-color: #7b1fa2;
+}
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 20px;
+  box-sizing: border-box;
+}
+
+.logout-button {
+  padding: 10px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff3d00;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.logout-button:hover {
+  background-color: #dd2c00;
+}
