@@ -29,3 +29,4 @@ def upload_resume():
     except Exception as e:
         print(f">> Exception: {e}")
         return jsonify({"error": str(e)}), 500
+
