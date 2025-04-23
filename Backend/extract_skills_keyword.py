@@ -7,7 +7,9 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
 from database import skills_collection
+from flask import Blueprint, request, jsonify
 
+skills_bp = Blueprint('skills', __name__)
 
 def extract_text_from_pdf(pdf_path):
     text = ""
@@ -30,3 +32,14 @@ def extract_skills_from_resume(pdf_path):
     # Insert the data into the MongoDB collection
     skills_collection.insert_one(skills_data)
     return list(set(matched_skills))  # Remove duplicates
+
+
+@skills_bp.route("/api/extracted-skills", methods=["GET"])
+def get_extracted_skills():
+    latest_entry = skills_collection.find_one(sort=[("extracted_at", -1)])
+    if latest_entry:
+        return jsonify({
+            "skills": latest_entry["skills"],
+            "extracted_at": latest_entry["extracted_at"].strftime("%Y-%m-%d %H:%M:%S")
+        }), 200
+    return jsonify({"message": "No skills extracted yet."}), 404
