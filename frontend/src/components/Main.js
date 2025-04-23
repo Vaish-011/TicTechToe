@@ -30,7 +30,7 @@ const features = [
   },
   {
     title: 'Resume Imporvement Helper',
-    path: '/resumeinterview',
+    path: '/resumeuploader',
     className: 'dashboard',
     description: 'Get resume tips and prepare for interviews with smart tools.',
   },
