@@ -91,6 +91,7 @@ export default function Main() {
             </Link>
           ))}
         </div>
+        <Link to="/suggestjob" className="btn dashboard">Suggest Jobs</Link>
       </motion.div>
     </div>
   )

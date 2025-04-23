@@ -2,7 +2,7 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from datetime import datetime
-from database import job_collection
+from database import job_collection,users_collection
 from bson.objectid import ObjectId
 
 job_bp = Blueprint('job_bp', __name__)
@@ -98,3 +98,35 @@ def delete_job(job_id):
         return jsonify({"message": "Job deleted"}), 200
     else:
         return jsonify({"message": "Failed to delete job"}), 500
+    
+
+
+@job_bp.route("/suggested", methods=["GET"])
+@jwt_required()
+def get_suggested_jobs():
+    current_user_id = get_jwt_identity()
+
+    # Fetch the current user's profile to get their skills from the dashboard
+    user = users_collection.find_one({"_id": current_user_id})
+    print(f"Fetched user: {user}")  # Log the user object
+
+    if user and "dashboard" in user and "skills" in user["dashboard"] and isinstance(user["dashboard"]["skills"], list):
+        user_skills = [skill.strip().lower() for skill in user["dashboard"]["skills"]]
+        print(f"User skills: {user_skills}")  # Log the extracted user skills
+
+        # Find jobs where at least one skill in the job's skills list matches a user skill
+        suggested_jobs = job_collection.find({
+            "skills": {"$in": user_skills}
+        })
+
+        suggested_jobs_list = []
+        for job in suggested_jobs:
+            print(f"Found matching job: {job.get('title')}, Skills: {job.get('skills')}") # Log matching jobs
+            job['_id'] = str(job['_id'])
+            suggested_jobs_list.append(job)
+
+        print(f"Suggested jobs list: {suggested_jobs_list}") # Log the final list
+        return jsonify(suggested_jobs_list), 200
+    else:
+        print("User data is missing dashboard or skills information.")
+        return jsonify([]), 200  # Return empty list if user data is incomplete
